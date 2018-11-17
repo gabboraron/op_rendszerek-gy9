@@ -73,14 +73,15 @@ Szükséges `include`ok:
 #include <sys/stat.h>
 ````
 
-PL: A gyermek folyamat olabvsni fogja a szülő pedig írja
+PL: A gyermek folyamat olvasni fogja a szülő pedig írja
 `````C
 key_t kulcs;
 kulcs=ftok(argv[0],1);
 char *s; //ezt hozzuk létre
 oszt_mem_id=shmget(kulcs,500,IPC_CREAT|S_IRUSR|S_IWUSR); //shmget(kulcs,megosztott terület mérete,kapcsoltó /*ha nem létezik létrehozzuk, jogosultságok etc*/);
  s = shmat(oszt_mem_id,NULL,0);  //megosztott memórai terület címe
-````
+`````
+
 
 Szülő:
 ````C
@@ -89,7 +90,7 @@ shmdt(s); //törli a meegosztottat
 
 
 shmctl(oszt_mem_id,IPC_RMID,NULL); //shmctl(osztott memória terület cím, mit csináljunk vele, NULL); //jelen esetben törli
-````
+`````
 
 Gyerek:
 ````C
