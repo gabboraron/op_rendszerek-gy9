@@ -63,7 +63,7 @@ int fogad( int uzenetsor )
 ### Osztott memória
 
 > fájl: `osztmem.c`
-Hogyan tudunk létrehozni egy olyan változót amitz két foylamat párhuzamosan tud írni, olvasni, ez egy megosztott területen lévő változó
+Hogyan tudunk létrehozni egy olyan változót amit két foylamat párhuzamosan tud írni, olvasni, ez egy megosztott területen lévő változó
 
 Szükséges `include`ok:
 ````C
